@@ -1,6 +1,6 @@
 {
   "name": "debatgemist",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Praat met debatgemist.tweedekamer.nl",
   "main": "index.js",
   "dependencies": {

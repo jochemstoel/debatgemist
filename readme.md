@@ -22,7 +22,9 @@ Deze module kent momenteel de volgende methoden.
 Geeft informatie over een debat terug als Object. (titel, datum, beschrijving, afbeelding en mp4 url)
 
 ```js
-DebatGemist.info('https://debatgemist.tweedekamer.nl/debatten/data-analytics')
+var DebatGemist = require('debatgemist')
+var debat = DebatGemist.info('https://debatgemist.tweedekamer.nl/debatten/data-analytics')
+console.log(debat)
 ```
 
 De uitvoer van *Debat.info* is bijvoorbeeld:
@@ -43,7 +45,8 @@ De uitvoer van *Debat.info* is bijvoorbeeld:
 Haalt meest recente debatten als URL string van de hoofdpagina, roept dan intern *DebatGemist.info* op elk item en geeft een lijst met debat objecten terug.
 
 ```js 
-let recent = DebatGemist.recent()
+var DebatGemist = require('debatgemist')
+var recent = DebatGemist.recent()
 console.log(recent)
 ```
 
