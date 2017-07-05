@@ -1,11 +1,12 @@
 {
   "name": "debatgemist",
-  "version": "0.0.6",
+  "version": "0.10.0",
   "description": "Praat met debatgemist.tweedekamer.nl",
   "main": "index.js",
   "dependencies": {
     "deasync-promise": "^1.0.1",
-    "mu.js": "^1.0.1"
+    "mu.js": "^1.0.1", 
+    "request-progress": "^3.0.0"
   },
   "devDependencies": {},
   "keywords": [
@@ -13,6 +14,10 @@
     "gemist",
     "politiek"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jochemstoel/debatgemist"
+  },
   "author": "Jochem Stoel",
   "license": "ISC"
 }

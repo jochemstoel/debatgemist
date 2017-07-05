@@ -41,13 +41,17 @@ De uitvoer van *Debat.info* is bijvoorbeeld:
 }
 ```
 
-### DebatGemist.recent()
-Haalt meest recente debatten als URL string van de hoofdpagina, roept dan intern *DebatGemist.info* op elk item en geeft een lijst met debat objecten terug.
+### DebatGemist.recent(aantal)
+Haalt meest recente debatten als URL string van de hoofdpagina, roept dan intern *DebatGemist.info* op elk item en geeft een lijst met debat objecten terug. Het argument *aantal* is nieuw en dat is het maximale aantal debatten dat wordt gefetcht. Misschien heb je namelijk aan de eerste of eerste twee genoeg. Standaardwaarde van *aantal* is 100 maar zo  veel staan er nooit op de website hoofdpagina.
 
 ```js 
 var DebatGemist = require('debatgemist')
-var recent = DebatGemist.recent()
+var recent = DebatGemist.recent() 
 console.log(recent)
+
+/* of met een aantal argument, in dit geval maximaal 3 */
+var eersteDrieResultaten = DebatGemist.recent(3)
+console.log(eersteDrieResultaten)
 ```
 
 ...
@@ -101,6 +105,10 @@ console.log(recent)
    ...
 ]
 ```
+
+## Update 5 juli 2017
+De functie recent() accepteert nu een argument met aantal. Zie hierboven.
+In de map voorbeeld staan nu 2 voorbeelden. Het synchroon en asynchroon downloaden van de video of de HTML pagina van een debat.
 
 ## Todo
 De volgende dingen was ik al mee bezig en zal ik afmaken als ik me een keer verveel.

@@ -17,12 +17,13 @@ DebatGemist.info = function(url) {
 					
 					deliver({
 						title: $('title').text().split('|')[0].trim(),
+						url: url, 
 						meta: {
 							datetime: $('time', meta).text(), 
 							description: $('.meta-name', meta).text(), 
 							image: $("link[rel='image_src']").attr('href')
 						}, 
-						mp4: webhost+videourl
+						mp4: mp4host+videourl
 					})
 				})
 			} catch (exception) {
@@ -32,15 +33,20 @@ DebatGemist.info = function(url) {
 	)
 }
 
-DebatGemist.recent = () => deasync(
+DebatGemist.recent = max => deasync(
 	new Promise((deliver, renege) => {
 		let data = []
+		if(typeof max != 'number')
+			max = 100
 		try {
 			download(webhost).then($ => {
 				$('a', $('.stripped.videos_search-videos-list')).each(function() {
-					data.push(
-						DebatGemist.info(webhost + $(this).attr('href'))
-					)
+					if(data.length < max) 
+						data.push(
+							DebatGemist.info(webhost + $(this).attr('href'))
+						)
+					else 
+						deliver(data)
 				})
 				deliver(data)
 			})
