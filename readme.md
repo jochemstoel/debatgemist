@@ -8,6 +8,8 @@ Node module *DebatGemist* doet HTTP verzoeken naar debatgemist.tweedekamer.nl en
 npm install debatgemist
 ```
 
+Let op: deze module gebruikt deasync-promise voor het synchroniseren van Promise objecten en mijn mu.js voor het initialiseren van jQuery op een externe DOM. Indien je debatgemist downloadt van GitHub en niet via NPM installeert dan moet je zorgen dat die dependencies aanwezig zijn.  NPM geinstalleerd? Ga naar de map debatgemist en voer simpelweg *npm install*  uit.
+
 ## Initialiseren 
 ```js
 var DebatGemist = require('debatgemist')
